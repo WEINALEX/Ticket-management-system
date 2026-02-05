@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:18
+    container_name: jiralight-postgres
+    restart: always
+    environment:
+      POSTGRES_DB: jiralight
+      POSTGRES_USER: jiralight
+      POSTGRES_PASSWORD: 54jiralight32
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/18/docker
+
+volumes:
+  postgres_data:
